@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartGuruji JNVST 2027 Kannada Model Paper Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 12px;
+      background: #e9eff7;
+      font-family: "Noto Sans Kannada", "Tunga", Arial, sans-serif;
+    }
+    #sgjnv27k-app {
+      --navy: #12315a;
+      --blue: #2563eb;
+      --green: #15803d;
+      --orange: #c2410c;
+      --line: #d8e1ec;
+      --ink: #172b4d;
+      font: 1.2rem/1.65 "Noto Sans Kannada", "Tunga", Arial, sans-serif;
+      color: var(--ink);
+      background: #f4f7fb;
+      padding: 16px;
+      border-radius: 16px;
+      max-width: 1050px;
+      margin: auto;
+    }
+    #sgjnv27k-app * { box-sizing: border-box; }
+    #sgjnv27k-app h2, #sgjnv27k-app h3 { line-height: 1.4; margin: 0 0 10px; }
+    #sgjnv27k-app .hero {
+      background: linear-gradient(130deg, #102b50, #315ca8);
+      color: #fff;
+      padding: 22px;
+      border-radius: 14px;
+      text-align: center;
+    }
+    #sgjnv27k-app .hero h2 { font-size: 1.65rem; color: #ffe08a; }
+    #sgjnv27k-app .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 14px;
+    }
+    #sgjnv27k-app .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    #sgjnv27k-app label { font-weight: 700; display: block; margin-bottom: 5px; }
+    #sgjnv27k-app input, #sgjnv27k-app select {
+      width: 100%;
+      padding: 11px;
+      border: 1px solid #b8c7d9;
+      border-radius: 8px;
+      font: inherit;
+      background: #fff;
+    }
+    #sgjnv27k-app button {
+      border: 0;
+      border-radius: 9px;
+      padding: 12px 16px;
+      font: 700 1.1rem/1.4 inherit;
+      cursor: pointer;
+      color: #fff;
+    }
+    #sgjnv27k-app .blue { background: #2563eb; }
+    #sgjnv27k-app .green { background: #15803d; }
+    #sgjnv27k-app .orange { background: #c2410c; }
+    #sgjnv27k-app .gray { background: #475569; }
+    #sgjnv27k-app button:disabled { opacity: .45; cursor: not-allowed; }
+    #sgjnv27k-app .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    #sgjnv27k-app .muted { color: #52657d; font-size: 1.05rem; }
+    #sgjnv27k-app .hidden { display: none !important; }
+    #sgjnv27k-app .paper {
+      background: #fff;
+      padding: 22px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      margin-top: 18px;
+    }
+    #sgjnv27k-app .paper.large-font { font-size: 1.35rem; line-height: 1.75; }
+    #sgjnv27k-app .paperhead { text-align: center; border-bottom: 2px solid #1e293b; padding-bottom: 12px; }
+    #sgjnv27k-app .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+      background: #eef3f9;
+      padding: 10px;
+      margin-top: 12px;
+      border-radius: 8px;
+    }
+    #sgjnv27k-app .part {
+      margin: 18px 0 8px;
+      background: #eaf1ff;
+      padding: 9px 12px;
+      border-left: 5px solid #315ca8;
+      font-weight: 800;
+    }
+    #sgjnv27k-app .q {
+      padding: 10px 8px;
+      border-bottom: 1px dashed #d5dce5;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    #sgjnv27k-app .qtitle { font-weight: 700; margin-bottom: 7px; }
+    #sgjnv27k-app .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 14px; margin-left: 8px; }
+    #sgjnv27k-app .opt { padding: 3px 0; }
+    #sgjnv27k-app .visual { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+    #sgjnv27k-app .tile {
+      border: 1px solid #64748b;
+      border-radius: 5px;
+      padding: 4px;
+      min-width: 62px;
+      text-align: center;
+      background: #fff;
+    }
+    #sgjnv27k-app .tile svg { display: block; width: 60px; height: 54px; margin: auto; }
+    #sgjnv27k-app .answerkey {
+      page-break-before: always;
+      border-top: 3px dashed #94a3b8;
+      margin-top: 24px;
+      padding-top: 15px;
+    }
+    #sgjnv27k-app .keygrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
+    #sgjnv27k-app .keycell { background: #f1f5f9; padding: 6px; border-radius: 5px; font-weight: 700; font-size: 0.95rem; }
+    #sgjnv27k-app .watermark {
+      position: fixed;
+      bottom: 12px;
+      right: 18px;
+      color: #94a3b8;
+      opacity: .35;
+      font-weight: 800;
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+
+    @media (max-width: 620px) {
+      body { padding: 6px; }
+      #sgjnv27k-app .opts { grid-template-columns: 1fr; }
+      #sgjnv27k-app .paper { padding: 12px; }
+      #sgjnv27k-app .keygrid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media print {
+      body { margin: 0; padding: 0; background: #fff; }
+      #sgjnv27k-app { background: #fff; padding: 0; font-size: 11pt; line-height: 1.42; color: #172b4d; max-width: none; }
+      #sgjnv27k-app .no-print { display: none !important; }
+      #sgjnv27k-app .paper { border: 0; padding: 0; margin: 0; font-size: 11pt; line-height: 1.42; }
+      #sgjnv27k-app .paper.large-font { font-size: 13pt; line-height: 1.5; }
+      #sgjnv27k-app .paperhead h2 { font-size: 16pt; }
+      #sgjnv27k-app .paperhead h3 { font-size: 13pt; }
+      #sgjnv27k-app .q { padding: 5px 4px; }
+      #sgjnv27k-app .qtitle { margin-bottom: 3px; }
+      #sgjnv27k-app .opts { gap: 2px 10px; }
+      #sgjnv27k-app .visual { margin: 5px 0; }
+      #sgjnv27k-app .tile { min-width: 54px; padding: 2px; }
+      #sgjnv27k-app .tile svg { width: 52px; height: 46px; }
+      #sgjnv27k-app .part { margin: 12px 0 6px; padding: 7px 10px; break-after: avoid; }
+      #sgjnv27k-app .answerkey { font-size: 10.5pt; }
+      @page { size: A4; margin: 11mm; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="sgjnv27k-app">
+  <div class="hero no-print">
+    <h2>ಜವಾಹರ್ ನವೋದಯ ವಿದ್ಯಾಲಯ ಪ್ರವೇಶ ಪರೀಕ್ಷೆ – 2027</h2>
+    <div><b>ಕನ್ನಡ ಮಾಧ್ಯಮ | ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ ರಚಕ</b></div>
+    <div>ಇಯತ್ತೆ 5ನೇ ತರಗತಿ ವಿದ್ಯಾರ್ಥಿಗಳಿಗಾಗಿ • SmartGuruji</div>
+  </div>
+
+  <div class="panel no-print">
+    <h3>1. ಪರೀಕ್ಷೆಯ ವಿವರಗಳು</h3>
+    <div class="grid">
+      <div>
+        <label for="sgjnv27k-school">ಶಾಲೆಯ ಹೆಸರು</label>
+        <input id="sgjnv27k-school" type="text" placeholder="ಶಾಲೆಯ ಹೆಸರನ್ನು ನಮೂದಿಸಿ">
+      </div>
+      <div>
+        <label for="sgjnv27k-student">ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</label>
+        <input id="sgjnv27k-student" type="text" placeholder="ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು">
+      </div>
+      <div>
+        <label for="sgjnv27k-set">ಪ್ರಶ್ನೆಪತ್ರಿಕೆ ಸೆಟ್</label>
+        <select id="sgjnv27k-set">
+          <option value="random">ಯಾದೃಚ್ಛಿಕ ಹೊಸ ಸೆಟ್</option>
+          <option value="1">ಸೆಟ್ 1</option>
+          <option value="2">ಸೆಟ್ 2</option>
+          <option value="3">ಸೆಟ್ 3</option>
+        </select>
+      </div>
+      <div>
+        <label for="sgjnv27k-density">ಮುದ್ರಣ ಅಕ್ಷರ ಗಾತ್ರ</label>
+        <select id="sgjnv27k-density">
+          <option value="normal">ಸಾಮಾನ್ಯ – ಸುಲಭ ಓದು</option>
+          <option value="large">ದೊಡ್ಡ ಅಕ್ಷರಗಳು</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel no-print">
+    <h3>2. ಪ್ರಶ್ನೆಪತ್ರಿಕೆ ಮಾದರಿ</h3>
+    <p>ಒಟ್ಟು 80 ಬಹು ಆಯ್ಕೆ ಪ್ರಶ್ನೆಗಳು • 100 ಅಂಕಗಳು • 120 ನಿಮಿಷಗಳು • ಋಣಾತ್ಮಕ ಅಂಕಗಳಿಲ್ಲ</p>
+    <div class="grid">
+      <div>ವಿಭಾಗ I – ಮಾನಸಿಕ ಸಾಮರ್ಥ್ಯ (MAT): <b>20 ಪ್ರಶ್ನೆಗಳು</b></div>
+      <div>ವಿಭಾಗ I – ಪರಿಸರ ಅಧ್ಯಯನ (EVS): <b>20 ಪ್ರಶ್ನೆಗಳು</b></div>
+      <div>ವಿಭಾಗ II – ಅಂಕಗಣಿತ: <b>20 ಪ್ರಶ್ನೆಗಳು</b></div>
+      <div>ವಿಭಾಗ III – ಕನ್ನಡ ಭಾಷೆ: <b>20 ಪ್ರಶ್ನೆಗಳು</b></div>
+    </div>
+    <p class="muted">JNVST 2027ರ ವಿನ್ಯಾಸ: ವಿಭಾಗ Iಯಲ್ಲಿ MAT 20 + EVS 20 ಪ್ರಶ್ನೆಗಳು (ಒಟ್ಟು 60 ನಿಮಿಷ); ಅಂಕಗಣಿತ 20 ಪ್ರಶ್ನೆಗಳು (30 ನಿಮಿಷ); ಭಾಷೆ 20 ಪ್ರಶ್ನೆಗಳು (30 ನಿಮಿಷ). ಒಟ್ಟು 80 ಪ್ರಶ್ನೆಗಳು, 100 ಅಂಕಗಳು, 120 ನಿಮಿಷಗಳು. ಇದು ಮೂಲ ಅಭ್ಯಾಸ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ; ಅಧಿಕೃತ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ ಅಲ್ಲ.</p>
+  </div>
+
+  <div class="panel no-print">
+    <h3>3. ರಚಿಸಿ ಮತ್ತು ಮುದ್ರಿಸಿ</h3>
+    <div class="actions">
+      <button type="button" class="blue" id="sgjnv27k-generate">📄 ಹೊಸ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ ರಚಿಸಿ</button>
+      <button type="button" class="orange" id="sgjnv27k-key" disabled>🔑 ಉತ್ತರ ಕೀ ತೋರಿಸಿ / ಮರೆಮಾಡಿ</button>
+      <button type="button" class="green" id="sgjnv27k-print" disabled>🖨️ ಮುದ್ರಿಸಿ / PDF ಉಳಿಸಿ</button>
+    </div>
+    <p class="muted">ಪ್ರಶ್ನೆಪತ್ರಿಕೆ A4 ಪುಟಗಳಿಗೆ ಹೊಂದುವಂತೆ ವಿನ್ಯಾಸಗೊಳಿಸಲಾಗಿದೆ. ಪ್ರಶ್ನೆಗಳ ಉದ್ದ ಮತ್ತು ಮುದ್ರಣ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಪ್ರಕಾರ ಪುಟಗಳ ಸಂಖ್ಯೆ ಬದಲಾಗಬಹುದು.</p>
+  </div>
+
+  <div id="sgjnv27k-output" class="paper hidden"></div>
+  <div class="watermark">SmartGuruji</div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  const root = document.getElementById("sgjnv27k-app");
+  if (!root) return;
+  const $ = id => root.querySelector("#sgjnv27k-" + id);
+
+  const esc = v => {
+    const d = document.createElement("div");
+    d.textContent = v == null ? "" : String(v);
+    return d.innerHTML;
+  };
+
+  const shuffle = a => {
+    const b = a.slice();
+    for (let i = b.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [b[i], b[j]] = [b[j], b[i]];
+    }
+    return b;
+  };
+
+  const svg = (kind, variant = 0) => {
+    const shapes = {
+      circle: `<circle cx="30" cy="27" r="17" fill="none" stroke="#172b4d" stroke-width="3"/>`,
+      square: `<rect x="13" y="10" width="34" height="34" fill="none" stroke="#172b4d" stroke-width="3"/>`,
+      triangle: `<path d="M30 7 L51 45 L9 45 Z" fill="none" stroke="#172b4d" stroke-width="3"/>`,
+      diamond: `<path d="M30 5 L52 27 L30 49 L8 27 Z" fill="none" stroke="#172b4d" stroke-width="3"/>`,
+      cross: `<path d="M30 7 V47 M10 27 H50" stroke="#172b4d" stroke-width="4"/>`,
+      star: `<path d="M30 5 L36 20 L52 21 L40 31 L44 47 L30 38 L16 47 L20 31 L8 21 L24 20 Z" fill="none" stroke="#172b4d" stroke-width="2.5"/>`,
+      arrow: `<path d="M10 27 H47 M34 14 L48 27 L34 40" fill="none" stroke="#172b4d" stroke-width="4"/>`,
+      dots: `<circle cx="18" cy="18" r="5" fill="#172b4d"/><circle cx="42" cy="18" r="5" fill="#172b4d"/><circle cx="30" cy="38" r="5" fill="#172b4d"/>`
+    };
+    const transform = ["", "rotate(90 30 27)", "rotate(180 30 27)", "rotate(270 30 27)"][variant % 4];
+    return `<svg viewBox="0 0 60 54" role="img" aria-label="ಆಕೃತಿ"><g transform="${transform}">${shapes[kind] || shapes.circle}</g></svg>`;
+  };
+
+  const V = items => `<div class="visual">${items.map(x => `<div class="tile">${x}</div>`).join("")}</div>`;
+  const q = (text, opts, ans, visual = "") => ({ text, opts, ans, visual });
+
+  const MAT = [
+    q("ಕೆಳಗಿನ ಆಕೃತಿ ಸರಣಿಯಲ್ಲಿ ಮುಂದಿನ ಆಕೃತಿ ಯಾವುದು?", ["ವೃತ್ತ", "ಚೌಕ", "ತ್ರಿಭುಜ", "ನಕ್ಷತ್ರ"], "ಚೌಕ", V([svg("circle"), "→", svg("triangle"), "→", svg("square"), "→", "?"])),
+    q("ಆಕೃತಿಯು ಪ್ರತಿ ಹಂತದಲ್ಲೂ 90° ತಿರುಗುತ್ತದೆ. ಮುಂದಿನ ದಿಕ್ಕು ಯಾವುದು?", ["ಮೇಲಕ್ಕೆ", "ಬಲಕ್ಕೆ", "ಕೆಳಕ್ಕೆ", "ಎಡಕ್ಕೆ"], "ಎಡಕ್ಕೆ", V([svg("arrow", 0), "→", svg("arrow", 1), "→", svg("arrow", 2), "→", "?"])),
+    q("ಉಳಿದವುಗಳಿಂದ ಭಿನ್ನವಾದ ಆಕೃತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.", ["ವೃತ್ತ", "ಚೌಕ", "ತ್ರಿಭುಜ", "ನಕ್ಷತ್ರ"], "ತ್ರಿಭುಜ", V([svg("circle"), svg("square"), svg("triangle"), svg("circle")])),
+    q("ಒಂದು ಆಕೃತಿಯಲ್ಲಿ ಒಂದು ಚೌಕದ ಒಳಗೆ ವೃತ್ತವಿದೆ. ಅದೇ ಸಂಬಂಧವನ್ನು ತೋರಿಸುವ ಆಯ್ಕೆ ಯಾವುದು?", ["ತ್ರಿಭುಜದ ಒಳಗೆ ವೃತ್ತ", "ವೃತ್ತದ ಹೊರಗೆ ಚೌಕ", "ಎರಡು ಪ್ರತ್ಯೇಕ ವೃತ್ತಗಳು", "ಒಂದು ನಕ್ಷತ್ರ"], "ತ್ರಿಭುಜದ ಒಳಗೆ ವೃತ್ತ", V([svg("square"), "→", svg("circle")])),
+    q("ಸರಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ: 2, 4, 6, 8, ?", ["9", "10", "11", "12"], "10"),
+    q("ಸರಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ: 5, 10, 15, 20, ?", ["22", "24", "25", "30"], "25"),
+    q("ಸರಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ: 1, 4, 9, 16, ?", ["20", "24", "25", "36"], "25"),
+    q("ಸರಣಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ: 30, 27, 24, 21, ?", ["19", "18", "17", "16"], "18"),
+    q("ಒಂದು ಸಾಲಿನಲ್ಲಿ ರವಿ ಎಡದಿಂದ 7ನೇ ಸ್ಥಾನದಲ್ಲಿದ್ದಾನೆ. ಬಲದಿಂದ 5ನೇ ಸ್ಥಾನದಲ್ಲಿದ್ದಾನೆ. ಸಾಲಿನಲ್ಲಿ ಒಟ್ಟು ಎಷ್ಟು ಮಕ್ಕಳು?", ["10", "11", "12", "13"], "11"),
+    q("ಅನುಕ್ರಮದಲ್ಲಿ ಸೋಮವಾರದ ನಂತರ 3ನೇ ದಿನ ಯಾವುದು?", ["ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"], "ಗುರುವಾರ"),
+    q("ರಮ್ಯಾ ಉತ್ತರಕ್ಕೆ ಮುಖಮಾಡಿ ನಿಂತಿದ್ದಾಳೆ. ಬಲಕ್ಕೆ ತಿರುಗಿದರೆ ಯಾವ ದಿಕ್ಕಿಗೆ ಮುಖಮಾಡುತ್ತಾಳೆ?", ["ಪೂರ್ವ", "ಪಶ್ಚಿಮ", "ದಕ್ಷಿಣ", "ಉತ್ತರ"], "ಪೂರ್ವ"),
+    q("ಒಂದು ಗಡಿಯಾರದಲ್ಲಿ 3 ಗಂಟೆ ತೋರಿಸಲು ನಿಮಿಷದ ಮುಳ್ಳು 12ರಲ್ಲಿ ಇದ್ದರೆ ಗಂಟೆಯ ಮುಳ್ಳು ಯಾವ ಸಂಖ್ಯೆಯಲ್ಲಿ ಇರುತ್ತದೆ?", ["2", "3", "4", "6"], "3"),
+    q("ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಕನ್ನಡಿಯ ಪ್ರತಿಬಿಂಬದಲ್ಲಿ ಎಡ-ಬಲ ಬದಲಾಗುವ ವಸ್ತು ಯಾವುದು?", ["ಸಮಮಿತ ವೃತ್ತ", "ಬಾಣದ ಗುರುತು", "ಚೌಕ", "ಸಮಾನ ಬದಿಯ ತ್ರಿಭುಜ"], "ಬಾಣದ ಗುರುತು", V([svg("arrow"), "→", svg("arrow", 2)])),
+    q("ಒಂದು ಕಾಗದವನ್ನು ಮಧ್ಯದಲ್ಲಿ ಮಡಚಿ ಒಂದು ರಂಧ್ರ ಮಾಡಿದರೆ ತೆರೆದಾಗ ಸಾಮಾನ್ಯವಾಗಿ ಎಷ್ಟು ರಂಧ್ರಗಳು ಕಾಣುತ್ತವೆ?", ["1", "2", "3", "4"], "2"),
+    q("ಒಂದು ಗುಂಪಿನಲ್ಲಿ 3, 6, 9, 12 ಇವೆ. ಮುಂದಿನ ಸಂಖ್ಯೆ ಯಾವುದು?", ["13", "14", "15", "16"], "15"),
+    q("ಅಮ್ಮನ ಸಹೋದರನನ್ನು ನಾವು ಏನೆಂದು ಕರೆಯುತ್ತೇವೆ?", ["ಮಾವ", "ಅತ್ತೆ", "ಚಿಕ್ಕಪ್ಪ", "ಅಜ್ಜ"], "ಮಾವ"),
+    q("ಅಕ್ಷರ ಕ್ರಮದಲ್ಲಿ A, C, E, G ನಂತರ ಯಾವ ಅಕ್ಷರ ಬರುತ್ತದೆ?", ["H", "I", "J", "K"], "I"),
+    q("ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಜೋಡಿಯಾಗಿ ಸರಿಹೊಂದದದ್ದು ಯಾವುದು?", ["ಹಗಲು–ಸೂರ್ಯ", "ರಾತ್ರಿ–ಚಂದ್ರ", "ಮಳೆ–ಮೋಡ", "ಬೆಂಕಿ–ಹಿಮ"], "ಬೆಂಕಿ–ಹಿಮ"),
+    q("ಒಂದು ಪೆಟ್ಟಿಗೆಯಲ್ಲಿ 4 ಕೆಂಪು ಮತ್ತು 3 ನೀಲಿ ಚೆಂಡುಗಳಿವೆ. ಒಟ್ಟು ಚೆಂಡುಗಳು ಎಷ್ಟು?", ["6", "7", "8", "9"], "7"),
+    q("ಚಿತ್ರದಲ್ಲಿರುವ ಆಕೃತಿಗಳ ಸಂಖ್ಯೆಯನ್ನು ಎಣಿಸಿ.", ["2", "3", "4", "5"], "3", V([svg("circle"), svg("triangle"), svg("square")]))
+  ];
+
+  const EVS = [
+    q("ಸಸ್ಯವು ಮಣ್ಣಿನಿಂದ ನೀರು ಮತ್ತು ಖನಿಜಗಳನ್ನು ಯಾವ ಭಾಗದ ಮೂಲಕ ಹೀರಿಕೊಳ್ಳುತ್ತದೆ?", ["ಬೇರು", "ಕಾಂಡ", "ಎಲೆ", "ಹೂವು"], "ಬೇರು"),
+    q("ಕೆಳಗಿನವುಗಳಲ್ಲಿ ನೀರಿನಲ್ಲಿ ಬೆಳೆಯುವ ಸಸ್ಯ ಯಾವುದು?", ["ಕಮಲ", "ಮಾವು", "ಬೇವಿನ ಮರ", "ತೆಂಗು"], "ಕಮಲ"),
+    q("ಯಾವ ಪ್ರಾಣಿ ಮರಿಗಳಿಗೆ ಜನ್ಮ ನೀಡುತ್ತದೆ?", ["ಕೋಳಿ", "ಹಾವು", "ಹಸು", "ಕಪ್ಪೆ"], "ಹಸು"),
+    q("ಮರಳು ಮಣ್ಣಿನಲ್ಲಿ ನೀರು ಹೇಗೆ ಹರಿಯುತ್ತದೆ?", ["ಬಹಳ ನಿಧಾನವಾಗಿ", "ವೇಗವಾಗಿ", "ಹರಿಯುವುದಿಲ್ಲ", "ಹಿಮವಾಗುತ್ತದೆ"], "ವೇಗವಾಗಿ"),
+    q("ನದಿ ದಡ ಮೀರಿ ಹರಿದಾಗ ಅದನ್ನು ಏನೆಂದು ಕರೆಯುತ್ತಾರೆ?", ["ಬರ", "ಪ್ರವಾಹ", "ಭೂಕಂಪ", "ಚಂಡಮಾರುತ"], "ಪ್ರವಾಹ"),
+    q("ಭಾರತದ ಉತ್ತರ ಭಾಗದಲ್ಲಿ ಇರುವ ಪ್ರಮುಖ ಪರ್ವತ ಶ್ರೇಣಿ ಯಾವುದು?", ["ಅರಾವಳಿ", "ಹಿಮಾಲಯ", "ಪಶ್ಚಿಮ ಘಟ್ಟ", "ವಿಂಧ್ಯ"], "ಹಿಮಾಲಯ"),
+    q("ದೇಹಕ್ಕೆ ತಕ್ಷಣದ ಶಕ್ತಿಯನ್ನು ನೀಡುವ ಮುಖ್ಯ ಪೋಷಕಾಂಶ ಯಾವುದು?", ["ಕಾರ್ಬೊಹೈಡ್ರೇಟ್", "ಜೀವಸತ್ವ", "ಖನಿಜ", "ನೀರು"], "ಕಾರ್ಬೊಹೈಡ್ರೇಟ್"),
+    q("ಮಾನವನ ದೇಹದ ಯಾವ ಅಂಗ ರಕ್ತವನ್ನು ಪಂಪ್ ಮಾಡುತ್ತದೆ?", ["ಮೆದುಳು", "ಹೃದಯ", "ಶ್ವಾಸಕೋಶ", "ಜಠರ"], "ಹೃದಯ"),
+    q("ಊಟ ಮಾಡುವ ಮೊದಲು ಏನು ಮಾಡಬೇಕು?", ["ಕೈ ತೊಳೆಯಬೇಕು", "ಓಡಬೇಕು", "ಮಲಗಬೇಕು", "ಕೈಗೆ ಮಣ್ಣು ಹಚ್ಚಬೇಕು"], "ಕೈ ತೊಳೆಯಬೇಕು"),
+    q("ಪಾರದರ್ಶಕ ವಸ್ತು ಯಾವುದು?", ["ಮರ", "ಇಟ್ಟಿಗೆ", "ಸ್ವಚ್ಛ ಗಾಜು", "ಕಾರ್ಡ್‌ಬೋರ್ಡ್"], "ಸ್ವಚ್ಛ ಗಾಜು"),
+    q("ಜಾಮ್ ಹೆಚ್ಚು ಕಾಲ ಕೆಡದಂತೆ ಇಡಲು ಸಾಮಾನ್ಯವಾಗಿ ಯಾವುದನ್ನು ಬಳಸುತ್ತಾರೆ?", ["ಸಕ್ಕರೆ", "ಮರಳು", "ಸಾಬೂನು", "ಮಣ್ಣು"], "ಸಕ್ಕರೆ"),
+    q("ವಿದ್ಯುತ್ ಬಲ್ಬಿನಲ್ಲಿ ಬೆಳಕು ನೀಡುವ ತೆಳು ತಂತಿಯನ್ನು ಏನೆಂದು ಕರೆಯುತ್ತಾರೆ?", ["ಸ್ವಿಚ್", "ಫಿಲಮೆಂಟ್", "ಪ್ಲಗ್", "ತಂತಿ ಹೊದಿಕೆ"], "ಫಿಲಮೆಂಟ್"),
+    q("ಆಯಸ್ಕಾಂತವು ಯಾವುದನ್ನು ಆಕರ್ಷಿಸುತ್ತದೆ?", ["ಪ್ಲಾಸ್ಟಿಕ್", "ಕಾಗದ", "ಕಬ್ಬಿಣದ ಮೊಳೆ", "ಮರದ ತುಂಡು"], "ಕಬ್ಬಿಣದ ಮೊಳೆ"),
+    q("ತಾಜ್ ಮಹಲ್ ಯಾವ ನಗರದಲ್ಲಿದೆ?", ["ಆಗ್ರಾ", "ಮೈಸೂರು", "ಬೆಂಗಳೂರು", "ಜೈಪುರ"], "ಆಗ್ರಾ"),
+    q("ಓಣಂ ಹಬ್ಬ ಯಾವ ರಾಜ್ಯದ ಪ್ರಮುಖ ಹಬ್ಬ?", ["ಕೇರಳ", "ಪಂಜಾಬ್", "ಅಸ್ಸಾಂ", "ಗುಜರಾತ್"], "ಕೇರಳ"),
+    q("ನೀರನ್ನು ಕುದಿಸುವುದರಿಂದ ಸಾಮಾನ್ಯವಾಗಿ ಏನು ಕಡಿಮೆಯಾಗುತ್ತದೆ?", ["ಹಾನಿಕಾರಕ ಸೂಕ್ಷ್ಮಜೀವಿಗಳು", "ಆಮ್ಲಜನಕದ ಬಣ್ಣ", "ನೀರಿನ ತೂಕ", "ನೀರಿನ ಪಾತ್ರೆ"], "ಹಾನಿಕಾರಕ ಸೂಕ್ಷ್ಮಜೀವಿಗಳು"),
+    q("ಮಳೆನೀರನ್ನು ಸಂಗ್ರಹಿಸುವ ವಿಧಾನವನ್ನು ಏನೆಂದು ಕರೆಯುತ್ತಾರೆ?", ["ಮಳೆನೀರು ಕೊಯ್ಲು", "ಅರಣ್ಯನಾಶ", "ಮಾಲಿನ್ಯ", "ಆವಿಯಾಗುವಿಕೆ"], "ಮಳೆನೀರು ಕೊಯ್ಲು"),
+    q("ಸೂರ್ಯನ ಬೆಳಕಿನಿಂದ ಸಸ್ಯಗಳು ಆಹಾರ ತಯಾರಿಸುವ ಪ್ರಕ್ರಿಯೆ ಯಾವುದು?", ["ಉಸಿರಾಟ", "ದ್ಯುತಿಸಂಶ್ಲೇಷಣೆ", "ಜೀರ್ಣಕ್ರಿಯೆ", "ಆವಿಯಾಗುವಿಕೆ"], "ದ್ಯುತಿಸಂಶ್ಲೇಷಣೆ"),
+    q("ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಸಂಚಾರದ ವೇಗವಾದ ಸಾರ್ವಜನಿಕ ಸಾಧನ ಯಾವುದು?", ["ಸೈಕಲ್", "ಎತ್ತಿನಗಾಡಿ", "ವಿಮಾನ", "ನಡಿಗೆ"], "ವಿಮಾನ"),
+    q("ಒಣ ಎಲೆಗಳು ಮತ್ತು ತರಕಾರಿ ತ್ಯಾಜ್ಯದಿಂದ ಏನು ತಯಾರಿಸಬಹುದು?", ["ಕಂಪೋಸ್ಟ್ ಗೊಬ್ಬರ", "ಪ್ಲಾಸ್ಟಿಕ್", "ಗಾಜು", "ಪೆಟ್ರೋಲ್"], "ಕಂಪೋಸ್ಟ್ ಗೊಬ್ಬರ")
+  ];
+
+  const MATH = [
+    q("5,47,38,216 ಸಂಖ್ಯೆಯಲ್ಲಿ 7ರ ಸ್ಥಾನಬೆಲೆ ಎಷ್ಟು?", ["7,000", "70,000", "7,00,000", "70,00,000"], "7,00,000"),
+    q("3, 0, 8, 5, 1 ಅಂಕೆಗಳಿಂದ ರಚಿಸಬಹುದಾದ ಅತಿ ಚಿಕ್ಕ ಐದು ಅಂಕಿಯ ಸಂಖ್ಯೆ ಯಾವುದು?", ["10,358", "10,538", "13,058", "30,158"], "10,358"),
+    q("1,275 × 4 = ?", ["4,800", "5,000", "5,100", "5,200"], "5,100"),
+    q("864 ÷ 12 = ?", ["62", "68", "72", "76"], "72"),
+    q("36 ಮತ್ತು 48ರ ಮಹತ್ತರ ಸಾಮಾನ್ಯ ವಿಭಾಜಕ ಯಾವುದು?", ["6", "8", "12", "16"], "12"),
+    q("6 ಮತ್ತು 9 ಎರಡರಿಂದಲೂ ಭಾಗವಾಗುವ ಸಂಖ್ಯೆ ಯಾವುದು?", ["4,515", "4,518", "4,520", "4,523"], "4,518"),
+    q("3/4 ಮತ್ತು 1/4ರ ಮೊತ್ತ ಎಷ್ಟು?", ["1/2", "1", "1 1/4", "2/4"], "1"),
+    q("2.5 + 1.75 = ?", ["3.25", "4.25", "4.50", "5.25"], "4.25"),
+    q("96 ÷ (4 + 2 × 6) = ?", ["6", "8", "10", "12"], "6"),
+    q("ಒಂದು ಅಂಗಿಯ ಬೆಲೆ ₹240. 3 ಅಂಗಿಗಳ ಬೆಲೆ ಎಷ್ಟು?", ["₹620", "₹680", "₹720", "₹740"], "₹720"),
+    q("₹500 ಕೊಟ್ಟು ₹368ರ ವಸ್ತು ಖರೀದಿಸಿದರೆ ಮರಳಿ ಸಿಗುವ ಹಣ ಎಷ್ಟು?", ["₹122", "₹132", "₹142", "₹152"], "₹132"),
+    q("2 ಗಂಟೆ 35 ನಿಮಿಷ + 1 ಗಂಟೆ 40 ನಿಮಿಷ = ?", ["3:75", "4 ಗಂಟೆ 15 ನಿಮಿಷ", "4 ಗಂಟೆ 05 ನಿಮಿಷ", "3 ಗಂಟೆ 55 ನಿಮಿಷ"], "4 ಗಂಟೆ 15 ನಿಮಿಷ"),
+    q("36 ಮೀ ಉದ್ದ ಮತ್ತು 24 ಮೀ ಅಗಲದ ಆಯತದ ಪರಿಮಿತಿ ಎಷ್ಟು?", ["60 ಮೀ", "120 ಮೀ", "180 ಮೀ", "240 ಮೀ"], "120 ಮೀ"),
+    q("20 ಮೀ ಉದ್ದ ಮತ್ತು 12 ಮೀ ಅಗಲದ ಆಯತದ ವಿಸ್ತೀರ್ಣ ಎಷ್ಟು?", ["32 ಚ.ಮೀ", "120 ಚ.ಮೀ", "240 ಚ.ಮೀ", "320 ಚ.ಮೀ"], "240 ಚ.ಮೀ"),
+    q("ಒಂದು ಪೆಟ್ಟಿಗೆಯಲ್ಲಿ 12 ಪೆನ್ಸಿಲ್‌ಗಳಿವೆ. 8 ಪೆಟ್ಟಿಗೆಗಳಲ್ಲಿ ಎಷ್ಟು ಪೆನ್ಸಿಲ್‌ಗಳು?", ["86", "92", "96", "108"], "96"),
+    q("ಒಂದು ರೈಲು 1 ಗಂಟೆಯಲ್ಲಿ 60 ಕಿ.ಮೀ ಸಾಗುತ್ತದೆ. 3 ಗಂಟೆಯಲ್ಲಿ ಎಷ್ಟು ದೂರ ಸಾಗುತ್ತದೆ?", ["120 ಕಿ.ಮೀ", "150 ಕಿ.ಮೀ", "180 ಕಿ.ಮೀ", "240 ಕಿ.ಮೀ"], "180 ಕಿ.ಮೀ"),
+    q("ಒಂದು ಸಂಖ್ಯೆಯ 1/5 ಭಾಗ 12 ಆಗಿದ್ದರೆ ಆ ಸಂಖ್ಯೆ ಯಾವುದು?", ["50", "55", "60", "65"], "60"),
+    q("ಒಂದು ತರಗತಿಯಲ್ಲಿ 18 ಹುಡುಗರು ಮತ್ತು 17 ಹುಡುಗಿಯರು ಇದ್ದಾರೆ. ಒಟ್ಟು ಎಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು?", ["33", "34", "35", "36"], "35"),
+    q("ಮಳೆ ಅಳತೆಯು 8, 12, 16 ಸೆಂ.ಮೀ. ಆಗಿದ್ದರೆ ಒಟ್ಟು ಎಷ್ಟು?", ["30", "32", "34", "36"], "36", V(["ಜೂನ್: 8", "ಜುಲೈ: 12", "ಆಗಸ್ಟ್: 16"])),
+    q("ಒಂದು ವಸ್ತುವನ್ನು ₹80ಕ್ಕೆ ಖರೀದಿಸಿ ₹95ಕ್ಕೆ ಮಾರಿದರೆ ಲಾಭ ಎಷ್ಟು?", ["₹10", "₹15", "₹20", "₹25"], "₹15")
+  ];
+
+  const passages = [
+    {
+      p: "ಒಂದು ಹಳ್ಳಿಯಲ್ಲಿ ಶಾಲೆಯ ಮಕ್ಕಳು ನೀರನ್ನು ಉಳಿಸುವ ಅಭಿಯಾನ ಆರಂಭಿಸಿದರು. ಅವರು ಶಾಲೆಯ ಮೇಲ್ಛಾವಣಿಯಿಂದ ಹರಿಯುವ ಮಳೆನೀರನ್ನು ಕೊಳವೆಯ ಮೂಲಕ ದೊಡ್ಡ ತೊಟ್ಟಿಗೆ ಸಂಗ್ರಹಿಸಿದರು. ಆ ನೀರನ್ನು ತೋಟಕ್ಕೆ ಬಳಸಿದರು. ಶಾಲೆಯ ಶಿಕ್ಷಕರು ನೀರನ್ನು ಅನಾವಶ್ಯಕವಾಗಿ ಹರಿಯಲು ಬಿಡಬಾರದು ಎಂದು ಮಕ್ಕಳಿಗೆ ತಿಳಿಸಿದರು. ಕೆಲವು ತಿಂಗಳ ನಂತರ ಶಾಲೆಯ ತೋಟ ಹಸಿರಿನಿಂದ ಕಂಗೊಳಿಸಿತು.",
+      qs: [
+        q("ಮಕ್ಕಳು ಯಾವ ಅಭಿಯಾನ ಆರಂಭಿಸಿದರು?", ["ಮರ ಕಡಿಯುವಿಕೆ", "ನೀರು ಉಳಿಸುವಿಕೆ", "ಕಾಗದ ಸುಡುವಿಕೆ", "ವಿದ್ಯುತ್ ವ್ಯರ್ಥ"], "ನೀರು ಉಳಿಸುವಿಕೆ"),
+        q("ಮಳೆನೀರನ್ನು ಎಲ್ಲಿ ಸಂಗ್ರಹಿಸಿದರು?", ["ಚಿಕ್ಕ ಬಟ್ಟಲಿನಲ್ಲಿ", "ದೊಡ್ಡ ತೊಟ್ಟಿಯಲ್ಲಿ", "ರಸ್ತೆಯಲ್ಲಿ", "ಬಾವಿಯ ಹೊರಗೆ"], "ದೊಡ್ಡ ತೊಟ್ಟಿಯಲ್ಲಿ"),
+        q("ಸಂಗ್ರಹಿಸಿದ ನೀರನ್ನು ಯಾವುದಕ್ಕೆ ಬಳಸಿದರು?", ["ತೋಟಕ್ಕೆ", "ವಾಹನ ತೊಳೆಯಲು ಮಾತ್ರ", "ಕಸ ಹಾಕಲು", "ಬೆಂಕಿ ಹಚ್ಚಲು"], "ತೋಟಕ್ಕೆ"),
+        q("ಶಿಕ್ಷಕರು ಮಕ್ಕಳಿಗೆ ಏನು ತಿಳಿಸಿದರು?", ["ನೀರು ವ್ಯರ್ಥ ಮಾಡಬಾರದು", "ಮರಗಳನ್ನು ಕಡಿಯಬೇಕು", "ತೋಟ ಮುಚ್ಚಬೇಕು", "ನೀರು ಮಾರಬೇಕು"], "ನೀರು ವ್ಯರ್ಥ ಮಾಡಬಾರದು"),
+        q("ಕೆಲವು ತಿಂಗಳ ನಂತರ ತೋಟ ಹೇಗಾಯಿತು?", ["ಒಣಗಿತು", "ಹಸಿರಿನಿಂದ ಕಂಗೊಳಿಸಿತು", "ಕಸದಿಂದ ತುಂಬಿತು", "ಮುಚ್ಚಲಾಯಿತು"], "ಹಸಿರಿನಿಂದ ಕಂಗೊಳಿಸಿತು")
+      ]
+    },
+    {
+      p: "ಕಿರಣ್‌ಗೆ ಪುಸ್ತಕ ಓದುವ ಹವ್ಯಾಸವಿತ್ತು. ಪ್ರತಿದಿನ ಸಂಜೆ ಅವನು ಗ್ರಂಥಾಲಯಕ್ಕೆ ಹೋಗುತ್ತಿದ್ದನು. ಒಂದು ದಿನ ಅವನು ಪ್ರಾಣಿಗಳ ಬಗ್ಗೆ ಒಂದು ಪುಸ್ತಕ ಓದಿದನು. ಆ ಪುಸ್ತಕದಿಂದ ಪಕ್ಷಿಗಳು ಗೂಡು ಕಟ್ಟುವ ವಿಧಾನ, ಜೇನುನೊಣಗಳ ಕೆಲಸ ಮತ್ತು ಕಾಡಿನ ಮಹತ್ವವನ್ನು ತಿಳಿದುಕೊಂಡನು. ಓದಿದ ವಿಷಯಗಳನ್ನು ತನ್ನ ಸ್ನೇಹಿತರಿಗೂ ವಿವರಿಸಿದನು.",
+      qs: [
+        q("ಕಿರಣ್‌ಗೆ ಯಾವ ಹವ್ಯಾಸವಿತ್ತು?", ["ಚಿತ್ರ ಬಿಡಿಸುವುದು", "ಪುಸ್ತಕ ಓದುವುದು", "ಓಟ", "ಹಾಡುವುದು"], "ಪುಸ್ತಕ ಓದುವುದು"),
+        q("ಅವನು ಯಾವಾಗ ಗ್ರಂಥಾಲಯಕ್ಕೆ ಹೋಗುತ್ತಿದ್ದನು?", ["ಬೆಳಿಗ್ಗೆ", "ಮಧ್ಯಾಹ್ನ", "ಸಂಜೆ", "ರಾತ್ರಿ"], "ಸಂಜೆ"),
+        q("ಪುಸ್ತಕದಲ್ಲಿ ಯಾವುದರ ಬಗ್ಗೆ ಓದಿದನು?", ["ಪ್ರಾಣಿಗಳು", "ಕಾರುಗಳು", "ಕಟ್ಟಡಗಳು", "ನಾಣ್ಯಗಳು"], "ಪ್ರಾಣಿಗಳು"),
+        q("ಜೇನುನೊಣಗಳು ಏನು ಮಾಡುತ್ತವೆ?", ["ಗೂಡು ಕಟ್ಟುವುದಿಲ್ಲ", "ಕೆಲಸ ಮಾಡುತ್ತವೆ", "ಮರ ಕಡಿಯುತ್ತವೆ", "ಮೀನು ಹಿಡಿಯುತ್ತವೆ"], "ಕೆಲಸ ಮಾಡುತ್ತವೆ"),
+        q("ಕಿರಣ್ ಓದಿದ ವಿಷಯಗಳನ್ನು ಯಾರಿಗೆ ವಿವರಿಸಿದನು?", ["ಶಿಕ್ಷಕರಿಗೆ ಮಾತ್ರ", "ಸ್ನೇಹಿತರಿಗೆ", "ಅಂಗಡಿಯವರಿಗೆ", "ಯಾರಿಗೂ ಇಲ್ಲ"], "ಸ್ನೇಹಿತರಿಗೆ")
+      ]
+    },
+    {
+      p: "ಒಂದು ದಿನ ಶಾಲೆಯಲ್ಲಿ ಸ್ವಚ್ಛತಾ ದಿನ ಆಚರಿಸಲಾಯಿತು. ವಿದ್ಯಾರ್ಥಿಗಳು ತರಗತಿ ಕೊಠಡಿ, ಆಟದ ಮೈದಾನ ಮತ್ತು ಶಾಲೆಯ ತೋಟವನ್ನು ಸ್ವಚ್ಛಗೊಳಿಸಿದರು. ಒಣ ಕಸ ಮತ್ತು ತೇವ ಕಸವನ್ನು ಬೇರೆ ಬೇರೆ ಬುಟ್ಟಿಗಳಲ್ಲಿ ಹಾಕಿದರು. ಶಿಕ್ಷಕರು ಕಸವನ್ನು ಎಲ್ಲೆಂದರಲ್ಲಿ ಎಸೆಯಬಾರದು ಮತ್ತು ಮರುಬಳಕೆಗೆ ಯೋಗ್ಯವಾದ ವಸ್ತುಗಳನ್ನು ಪ್ರತ್ಯೇಕಿಸಬೇಕು ಎಂದು ತಿಳಿಸಿದರು.",
+      qs: [
+        q("ಶಾಲೆಯಲ್ಲಿ ಯಾವ ದಿನ ಆಚರಿಸಲಾಯಿತು?", ["ಕ್ರೀಡಾ ದಿನ", "ಸ್ವಚ್ಛತಾ ದಿನ", "ಪರಿಸರ ದಿನವಲ್ಲ", "ಸಂಗೀತ ದಿನ"], "ಸ್ವಚ್ಛತಾ ದಿನ"),
+        q("ವಿದ್ಯಾರ್ಥಿಗಳು ಯಾವುದನ್ನು ಸ್ವಚ್ಛಗೊಳಿಸಿದರು?", ["ತರಗತಿ ಮತ್ತು ಮೈದಾನ", "ಬಸ್ ನಿಲ್ದಾಣ ಮಾತ್ರ", "ಮಾರುಕಟ್ಟೆ", "ನದಿ ಮಾತ್ರ"], "ತರಗತಿ ಮತ್ತು ಮೈದಾನ"),
+        q("ಒಣ ಮತ್ತು ತೇವ ಕಸವನ್ನು ಹೇಗೆ ಹಾಕಿದರು?", ["ಒಂದೇ ಬುಟ್ಟಿಗೆ", "ಬೇರೆ ಬೇರೆ ಬುಟ್ಟಿಗಳಿಗೆ", "ರಸ್ತೆಗೆ", "ನೀರಿನಲ್ಲಿ"], "ಬೇರೆ ಬೇರೆ ಬುಟ್ಟಿಗಳಿಗೆ"),
+        q("ಮರುಬಳಕೆಗೆ ಯೋಗ್ಯವಾದ ವಸ್ತುಗಳನ್ನು ಏನು ಮಾಡಬೇಕು?", ["ಸುಡಬೇಕು", "ಪ್ರತ್ಯೇಕಿಸಬೇಕು", "ಹೂಳಬೇಕು", "ನದಿಗೆ ಹಾಕಬೇಕು"], "ಪ್ರತ್ಯೇಕಿಸಬೇಕು"),
+        q("ಕಸವನ್ನು ಎಲ್ಲೆಂದರಲ್ಲಿ ಎಸೆಯುವುದು ಸರಿಯೇ?", ["ಹೌದು", "ಇಲ್ಲ", "ಕೆಲವೊಮ್ಮೆ", "ಯಾವಾಗಲೂ"], "ಇಲ್ಲ")
+      ]
+    },
+    {
+      p: "ಮೀನಾಳ ಕುಟುಂಬವು ರೈಲಿನಲ್ಲಿ ಪ್ರವಾಸಕ್ಕೆ ಹೊರಟಿತು. ಅವರು ಮುಂಚಿತವಾಗಿ ಟಿಕೆಟ್ ಕಾಯ್ದಿರಿಸಿದರು. ನಿಲ್ದಾಣದಲ್ಲಿ ಸೂಚನಾ ಫಲಕಗಳನ್ನು ಓದಿ ಸರಿಯಾದ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗೆ ಹೋದರು. ಪ್ರಯಾಣದ ವೇಳೆ ಮೀನಾಳ ತಂದೆ ಕಸವನ್ನು ಕಸದ ಬುಟ್ಟಿಗೆ ಹಾಕಿದರು. ರೈಲು ನಿಲ್ದಾಣದಲ್ಲಿ ನಿಂತ ನಂತರವೇ ಎಲ್ಲರೂ ಸುರಕ್ಷಿತವಾಗಿ ಇಳಿದರು.",
+      qs: [
+        q("ಮೀನಾಳ ಕುಟುಂಬ ಯಾವ ವಾಹನದಲ್ಲಿ ಪ್ರಯಾಣಿಸಿತು?", ["ಬಸ್", "ರೈಲು", "ವಿಮಾನ", "ದೋಣಿ"], "ರೈಲು"),
+        q("ಅವರು ಏನನ್ನು ಮುಂಚಿತವಾಗಿ ಕಾಯ್ದಿರಿಸಿದರು?", ["ಆಹಾರ", "ಟಿಕೆಟ್", "ಹೋಟೆಲ್ ಮಾತ್ರ", "ಆಟಿಕೆ"], "ಟಿಕೆಟ್"),
+        q("ಸರಿಯಾದ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ತಿಳಿಯಲು ಏನು ಓದಿದರು?", ["ಜಾಹೀರಾತು", "ಸೂಚನಾ ಫಲಕ", "ಕಥೆ ಪುಸ್ತಕ", "ಪತ್ರಿಕೆ"], "ಸೂಚನಾ ಫಲಕ"),
+        q("ತಂದೆ ಕಸವನ್ನು ಎಲ್ಲಿ ಹಾಕಿದರು?", ["ಕಿಟಕಿಯಿಂದ ಹೊರಗೆ", "ಕಸದ ಬುಟ್ಟಿಗೆ", "ನೆಲದ ಮೇಲೆ", "ಆಸನದ ಕೆಳಗೆ"], "ಕಸದ ಬುಟ್ಟಿಗೆ"),
+        q("ಯಾವಾಗ ರೈಲಿನಿಂದ ಇಳಿದರು?", ["ರೈಲು ಚಲಿಸುವಾಗ", "ರೈಲು ನಿಂತ ನಂತರ", "ಬಾಗಿಲಲ್ಲಿ ನಿಂತು", "ಹಳಿಯ ಮೇಲೆ"], "ರೈಲು ನಿಂತ ನಂತರ")
+      ]
+    }
+  ];
+
+  function pick(list, n, seed) {
+    if (seed === "random") return shuffle(list).slice(0, n);
+    const shift = ((Number(seed) - 1) * 3) % list.length;
+    return list.slice(shift).concat(list.slice(0, shift)).slice(0, n);
+  }
+
+  function renderQuestion(obj, no) {
+    const opts = shuffle(obj.opts);
+    const letters = ["A", "B", "C", "D"];
+    const idx = opts.indexOf(obj.ans);
+    const letter = idx >= 0 ? letters[idx] : "";
+    const html = `<div class="q"><div class="qtitle">${no}. ${esc(obj.text)}</div>${obj.visual || ""}<div class="opts">${opts.map((o, i) => `<div class="opt">(${letters[i]}) ${esc(o)}</div>`).join("")}</div></div>`;
+    return { html, ansLabel: letter ? `(${letter}) ${obj.ans}` : obj.ans };
+  }
+
+  function generate() {
+    const school = esc($("school").value.trim() || "ಶಾಲೆಯ ಹೆಸರು");
+    const student = esc($("student").value.trim() || "________________________");
+    const set = $("set").value;
+    const density = $("density").value;
+
+    const mat = pick(MAT, 20, set);
+    const evs = pick(EVS, 20, set);
+    const math = pick(MATH, 20, set);
+
+    let paper = `<div class="paperhead"><h2>ಜವಾಹರ್ ನವೋದಯ ವಿದ್ಯಾಲಯ ಆಯ್ಕೆ ಪರೀಕ್ಷೆ – 2027</h2><h3>ಮಾದರಿ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ | ಕನ್ನಡ ಮಾಧ್ಯಮ</h3><div><b>${school}</b></div><div class="meta"><span>ವಿದ್ಯಾರ್ಥಿ: ${student}</span><span>ಸಮಯ: 120 ನಿಮಿಷಗಳು</span><span>ಗರಿಷ್ಠ ಅಂಕಗಳು: 100</span></div><p>ಪ್ರತಿ ಪ್ರಶ್ನೆಗೆ 4 ಆಯ್ಕೆಗಳಿವೆ. ಸರಿಯಾದ ಒಂದೇ ಉತ್ತರವನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಪ್ರತಿ ಪ್ರಶ್ನೆಗೆ 1.25 ಅಂಕಗಳು. ಋಣಾತ್ಮಕ ಅಂಕಗಳಿಲ್ಲ.</p><p>ವಿಭಾಗ I (MAT + EVS): 60 ನಿಮಿಷಗಳು | ವಿಭಾಗ II (ಅಂಕಗಣಿತ): 30 ನಿಮಿಷಗಳು | ವಿಭಾಗ III (ಕನ್ನಡ ಭಾಷೆ): 30 ನಿಮಿಷಗಳು.</p></div>`;
+
+    const key = [];
+    const section = (title, arr, start) => {
+      let s = `<div class="part">${title}</div>`;
+      arr.forEach((x, i) => {
+        const res = renderQuestion(x, start + i);
+        s += res.html;
+        key.push({ n: start + i, a: res.ansLabel });
+      });
+      return s;
+    };
+
+    paper += section("ವಿಭಾಗ – I : ಮಾನಸಿಕ ಸಾಮರ್ಥ್ಯ ಪರೀಕ್ಷೆ (MAT) – ಪ್ರಶ್ನೆಗಳು 1 ರಿಂದ 20", mat, 1);
+    paper += section("ವಿಭಾಗ – I ಮುಂದುವರಿಕೆ : ಪರಿಸರ ಅಧ್ಯಯನ (EVS) – ಪ್ರಶ್ನೆಗಳು 21 ರಿಂದ 40", evs, 21);
+    paper += section("ವಿಭಾಗ – II : ಅಂಕಗಣಿತ ಪರೀಕ್ಷೆ – ಪ್ರಶ್ನೆಗಳು 41 ರಿಂದ 60", math, 41);
+
+    paper += `<div class="part">ವಿಭಾಗ – III : ಕನ್ನಡ ಭಾಷಾ ಪರೀಕ್ಷೆ – ಪ್ರಶ್ನೆಗಳು 61 ರಿಂದ 80</div>`;
+    const orderedPassages = set === "random" ? shuffle(passages) : pick(passages, passages.length, set);
+    let n = 61;
+    orderedPassages.forEach((p, pi) => {
+      paper += `<div class="q"><b>ಗದ್ಯಭಾಗ ${pi + 1}:</b><p>${esc(p.p)}</p></div>`;
+      p.qs.forEach(x => {
+        const res = renderQuestion(x, n);
+        paper += res.html;
+        key.push({ n: n, a: res.ansLabel });
+        n++;
+      });
+    });
+
+    paper += `<div class="answerkey hidden" id="sgjnv27k-answerkey"><h2 style="text-align:center">ಉತ್ತರ ಸೂಚಿ – ಶಿಕ್ಷಕರ ಬಳಕೆಗಾಗಿ</h2><div class="keygrid">${key.sort((a, b) => a.n - b.n).map(x => `<div class="keycell">${x.n}. ${esc(x.a)}</div>`).join("")}</div></div>`;
+
+    const out = $("output");
+    out.classList.toggle("large-font", density === "large");
+    out.innerHTML = paper;
+    out.classList.remove("hidden");
+    $("key").disabled = false;
+    $("print").disabled = false;
+    out.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  $("generate").addEventListener("click", generate);
+  $("density").addEventListener("change", () => {
+    $("output").classList.toggle("large-font", $("density").value === "large");
+  });
+  $("key").addEventListener("click", () => {
+    const k = $("output").querySelector("#sgjnv27k-answerkey");
+    if (k) k.classList.toggle("hidden");
+  });
+  $("print").addEventListener("click", () => {
+    if ($("output").classList.contains("hidden")) return;
+    const key = $("output").querySelector("#sgjnv27k-answerkey");
+    const wasHidden = key.classList.contains("hidden");
+    key.classList.add("hidden");
+    window.print();
+    if (!wasHidden) key.classList.remove("hidden");
+  });
+})();
+</script>
+
+</body>
+</html>
